@@ -12,7 +12,7 @@ using WebAPI.Data.Context;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220425160321_Initial")]
+    [Migration("20220426152033_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
