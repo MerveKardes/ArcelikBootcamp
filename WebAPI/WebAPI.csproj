@@ -20,4 +20,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\CQRS\Commands\" />
+    <Folder Include="Application\CQRS\CommandHandlers\" />
+    <Folder Include="Application\CQRS\Queries\" />
+    <Folder Include="Application\CQRS\QueryHandlers\" />
+    <Folder Include="Application\Dtos\" />
+  </ItemGroup>
+
 </Project>
