@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetTeachers()
+        public async Task<IActionResult> GetUsers()
         {
             var result = await _mediator.Send(new GetUserListQuery());
             return Ok(result);
@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> RemoveTeacher(int id)
+        public async Task<IActionResult> RemoveUser(int id)
         {
             await _mediator.Send(new RemoveUserCommand(id));
             return NoContent();
