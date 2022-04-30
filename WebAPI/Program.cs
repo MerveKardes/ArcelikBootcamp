@@ -1,4 +1,4 @@
-using E02.EFCoreApp;
+using WebAPI;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
