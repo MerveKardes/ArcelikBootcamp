@@ -1,4 +1,4 @@
-﻿namespace E02.EFCoreApp
+﻿namespace WebAPI
 {
     public class JwtInfo
     {

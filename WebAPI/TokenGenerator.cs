@@ -4,7 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using WebAPI.Application.Dtos;
 
-namespace E02.EFCoreApp
+namespace WebAPI
 {
     public class TokenGenerator
     {
