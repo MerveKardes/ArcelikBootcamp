@@ -25,6 +25,7 @@ namespace WebAPI.Application.CQRS.QueryHandlers
                 Summary=x.Summary,
                 Director=x.Director,
                 Point=x.Point,
+                IsFavorite=x.IsFavorite
                 
             }).SingleOrDefaultAsync(x => x.Id == request.Id);
 

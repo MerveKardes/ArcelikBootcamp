@@ -23,6 +23,7 @@ namespace WebAPI.Application.CQRS.QueryHandlers
                 ImageUrl=x.ImageUrl,
                 Summary = x.Summary,
                 Director = x.Director,
+                IsFavorite=x.IsFavorite,
                 Point = x.Point,
 
             }).ToListAsync();
