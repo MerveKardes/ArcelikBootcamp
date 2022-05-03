@@ -21,6 +21,7 @@ namespace WebAPI.Application.CQRS.QueryHandlers
             {
                 Id = x.Id,
                 Name = x.Name,
+                ImageUrl=x.ImageUrl,
                 Summary=x.Summary,
                 Director=x.Director,
                 Point=x.Point,

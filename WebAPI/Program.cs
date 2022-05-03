@@ -9,6 +9,17 @@ using WebAPI.Data.Context;
 var builder = WebApplication.CreateBuilder(args);
 
 
+builder.Services.AddCors(setup =>
+{
+    setup.AddPolicy("All", opt =>
+    {
+        opt.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+
+        
+    });
+});
+
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
     opt.RequireHttpsMetadata = false;
@@ -44,7 +55,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("All");
 app.UseAuthorization();
 
 app.MapControllers();

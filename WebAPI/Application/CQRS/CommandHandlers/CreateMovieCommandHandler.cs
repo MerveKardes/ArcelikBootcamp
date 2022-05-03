@@ -18,6 +18,7 @@ namespace WebAPI.Application.CQRS.CommandHandlers
         {
             var createdMovie=new Movie();
             createdMovie.Name=request.Name;
+            createdMovie.ImageUrl=request.ImageUrl;
             createdMovie.Summary=request.Summary;
             createdMovie.Director=request.Director;
             createdMovie.Point=request.Point;

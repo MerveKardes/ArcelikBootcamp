@@ -52,6 +52,7 @@ namespace WebAPI.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Writer = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Point = table.Column<int>(type: "int", nullable: false),
                     IsFavorite = table.Column<bool>(type: "bit", nullable: false),
@@ -74,6 +75,7 @@ namespace WebAPI.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Summary = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Director = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Point = table.Column<int>(type: "int", nullable: false),
