@@ -7,44 +7,44 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class FilmsController : ControllerBase
+    public class MoviesController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public FilmsController(IMediator mediator)
+        public MoviesController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetFilms()
+        public async Task<IActionResult> GetMovies()
         {
-            var result = await _mediator.Send(new GetFilmListQuery());
+            var result = await _mediator.Send(new GetMovieListQuery());
             return Ok(result);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var result = await _mediator.Send(new GetFilmByIdQuery(id));
+            var result = await _mediator.Send(new GetMovieByIdQuery(id));
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateFilm([FromBody] UpdateFilmCommand command)
+        public async Task<IActionResult> UpdateMovie([FromBody] UpdateMovieCommand command)
         {
             await _mediator.Send(command);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> RemoveFilm(int id)
+        public async Task<IActionResult> RemoveMovie(int id)
         {
-            await _mediator.Send(new RemoveFilmCommand(id));
+            await _mediator.Send(new RemoveMovieCommand(id));
             return NoContent();
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateFilm([FromBody] CreateFilmCommand command)
+        public async Task<IActionResult> CreateMovie([FromBody] CreateMovieCommand command)
         {
             await _mediator.Send(command);
             return Created("", command);

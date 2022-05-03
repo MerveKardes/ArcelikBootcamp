@@ -12,8 +12,8 @@ using WebAPI.Data.Context;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220429145705_initial")]
-    partial class initial
+    [Migration("20220503140924_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,7 +71,7 @@ namespace WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FilmId")
+                    b.Property<int>("MovieId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -81,14 +81,14 @@ namespace WebAPI.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.HasIndex("FilmId");
+                    b.HasIndex("MovieId");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("WebAPI.Data.Entities.Film", b =>
+            modelBuilder.Entity("WebAPI.Data.Entities.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -121,7 +121,7 @@ namespace WebAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Films");
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("WebAPI.Data.Entities.ReceiverMessage", b =>
@@ -242,9 +242,9 @@ namespace WebAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebAPI.Data.Entities.Film", "Film")
+                    b.HasOne("WebAPI.Data.Entities.Movie", "Movie")
                         .WithMany()
-                        .HasForeignKey("FilmId")
+                        .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -256,15 +256,15 @@ namespace WebAPI.Migrations
 
                     b.Navigation("Book");
 
-                    b.Navigation("Film");
+                    b.Navigation("Movie");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("WebAPI.Data.Entities.Film", b =>
+            modelBuilder.Entity("WebAPI.Data.Entities.Movie", b =>
                 {
                     b.HasOne("WebAPI.Data.Entities.User", null)
-                        .WithMany("Films")
+                        .WithMany("Movies")
                         .HasForeignKey("UserId");
                 });
 
@@ -310,7 +310,7 @@ namespace WebAPI.Migrations
 
                     b.Navigation("Comments");
 
-                    b.Navigation("Films");
+                    b.Navigation("Movies");
 
                     b.Navigation("ReceiverMessages");
 

@@ -3,11 +3,11 @@ using WebAPI.Application.Dtos;
 
 namespace WebAPI.Application.CQRS.Queries
 {
-    public class GetFilmByIdQuery:IRequest<FilmDto?>
+    public class GetMovieByIdQuery:IRequest<MovieDto?>
     {
         public int Id { get; set; }
 
-        public GetFilmByIdQuery(int id)
+        public GetMovieByIdQuery(int id)
         {
             Id = id;
         }

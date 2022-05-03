@@ -2,10 +2,10 @@
 
 namespace WebAPI.Application.CQRS.Commands
 {
-    public class RemoveFilmCommand:IRequest
+    public class RemoveMovieCommand:IRequest
     {
         public int Id { get; set; }
-        public RemoveFilmCommand(int id)
+        public RemoveMovieCommand(int id)
         {
             Id = id;
         }

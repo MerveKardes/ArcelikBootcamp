@@ -9,7 +9,7 @@ namespace WebAPI.Data.Context
         {
         }
 
-        public DbSet<Film> Films => Set<Film>();
+        public DbSet<Movie> Movies => Set<Movie>();
         public DbSet<Book> Books => Set<Book>();
         public DbSet<Comment> Comments => Set<Comment>();
         public DbSet<ReceiverMessage> ReceiverMessages => Set<ReceiverMessage>();
