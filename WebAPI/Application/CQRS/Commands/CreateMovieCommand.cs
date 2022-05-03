@@ -2,7 +2,7 @@
 
 namespace WebAPI.Application.CQRS.Commands
 {
-    public class CreateFilmCommand:IRequest
+    public class CreateMovieCommand:IRequest
     {
         public string Name { get; set; } = String.Empty;
         public string Summary { get; set; } = String.Empty;

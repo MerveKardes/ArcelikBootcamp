@@ -8,8 +8,8 @@
         public User? User { get; set; }
         public int BookId { get; set; }
         public Book? Book { get; set; }
-        public int FilmId { get; set; }
-        public Film? Film { get; set; }
+        public int MovieId { get; set; }
+        public Movie? Movie { get; set; }
 
 
     }

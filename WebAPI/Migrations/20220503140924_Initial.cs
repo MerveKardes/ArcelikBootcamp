@@ -4,7 +4,7 @@
 
 namespace WebAPI.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,7 +68,7 @@ namespace WebAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Films",
+                name: "Movies",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -82,9 +82,9 @@ namespace WebAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Films", x => x.Id);
+                    table.PrimaryKey("PK_Movies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Films_Users_UserId",
+                        name: "FK_Movies_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
@@ -137,7 +137,7 @@ namespace WebAPI.Migrations
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     BookId = table.Column<int>(type: "int", nullable: false),
-                    FilmId = table.Column<int>(type: "int", nullable: false)
+                    MovieId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -149,9 +149,9 @@ namespace WebAPI.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Comments_Films_FilmId",
-                        column: x => x.FilmId,
-                        principalTable: "Films",
+                        name: "FK_Comments_Movies_MovieId",
+                        column: x => x.MovieId,
+                        principalTable: "Movies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -172,9 +172,9 @@ namespace WebAPI.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_FilmId",
+                name: "IX_Comments_MovieId",
                 table: "Comments",
-                column: "FilmId");
+                column: "MovieId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_UserId",
@@ -182,8 +182,8 @@ namespace WebAPI.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Films_UserId",
-                table: "Films",
+                name: "IX_Movies_UserId",
+                table: "Movies",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -217,7 +217,7 @@ namespace WebAPI.Migrations
                 name: "Books");
 
             migrationBuilder.DropTable(
-                name: "Films");
+                name: "Movies");
 
             migrationBuilder.DropTable(
                 name: "Users");

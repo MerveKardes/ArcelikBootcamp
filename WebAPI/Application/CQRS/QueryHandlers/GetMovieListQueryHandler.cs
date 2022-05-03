@@ -6,17 +6,17 @@ using WebAPI.Data.Context;
 
 namespace WebAPI.Application.CQRS.QueryHandlers
 {
-    public class GetFilmListQueryHandler : IRequestHandler<GetFilmListQuery, List<FilmDto>>
+    public class GetMovieListQueryHandler : IRequestHandler<GetMovieListQuery, List<MovieDto>>
     {
         private readonly Context _context;
 
-        public GetFilmListQueryHandler(Context context)
+        public GetMovieListQueryHandler(Context context)
         {
             _context = context;
         }
-        public async Task<List<FilmDto>> Handle(GetFilmListQuery request, CancellationToken cancellationToken)
+        public async Task<List<MovieDto>> Handle(GetMovieListQuery request, CancellationToken cancellationToken)
         {
-            var result = await _context.Films.AsNoTracking().Select(x => new FilmDto
+            var result = await _context.Movies.AsNoTracking().Select(x => new MovieDto
             {
                 Id = x.Id,
                 Name = x.Name,

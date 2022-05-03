@@ -3,7 +3,7 @@ using WebAPI.Application.Dtos;
 
 namespace WebAPI.Application.CQRS.Queries
 {
-    public class GetFilmListQuery:IRequest<List<FilmDto>>
+    public class GetMovieListQuery:IRequest<List<MovieDto>>
     {
     }
 }

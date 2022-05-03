@@ -1,8 +1,6 @@
-﻿using MediatR;
-
-namespace WebAPI.Application.CQRS.Commands
+﻿namespace WebAPI.Application.Dtos
 {
-    public class UpdateFilmCommand:IRequest
+    public class MovieDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = String.Empty;
