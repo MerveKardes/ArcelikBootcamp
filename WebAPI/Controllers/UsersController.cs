@@ -45,7 +45,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTeacher([FromBody] CreateUserCommand command)
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserCommand command)
         {
             await _mediator.Send(command);
             return Created("", command);
