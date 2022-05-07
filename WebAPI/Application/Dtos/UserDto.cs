@@ -7,9 +7,9 @@
         public string Surname { get; set; } = String.Empty;
         public string Username { get; set; } = String.Empty;
         public string Password { get; set; } = String.Empty;
-        public string Message { get; set; } = String.Empty;
+        public string? Message { get; set; } = String.Empty;
         public string Email { get; set; } = String.Empty;
-        public int RoleId { get; set; }
-        public string RoleDefinition { get; set; } = string.Empty;
+        public int? RoleId { get; set; }
+        public string? RoleDefinition { get; set; } = string.Empty;
     }
 }

@@ -61,3 +61,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+void GetDbContextOptions(DbContextOptionsBuilder builder)
+{
+    builder.UseSqlServer("server=(localdb)\\mssqllocaldb; database=ArcelikDb; integrated security=true;");
+}

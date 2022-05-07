@@ -12,8 +12,8 @@ using WebAPI.Data.Context;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220503211552_second")]
-    partial class second
+    [Migration("20220503224501_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -108,7 +108,7 @@ namespace WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsFavorite")
+                    b.Property<bool>("IsFavorite")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -206,7 +206,6 @@ namespace WebAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Message")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -217,7 +216,7 @@ namespace WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
+                    b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
@@ -301,8 +300,7 @@ namespace WebAPI.Migrations
                     b.HasOne("WebAPI.Data.Entities.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Role");
                 });
