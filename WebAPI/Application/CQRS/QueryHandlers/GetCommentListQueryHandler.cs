@@ -6,7 +6,7 @@ using WebAPI.Data.Context;
 
 namespace WebAPI.Application.CQRS.QueryHandlers
 {
-    public class GetCommentListQueryHandler : IRequestHandler<GetCommentListQuery, List<MovieDto>>
+    public class GetCommentListQueryHandler : IRequestHandler<GetCommentListQuery, List<CommentDto>>
     {
         private readonly Context _context;
 
@@ -22,11 +22,12 @@ namespace WebAPI.Application.CQRS.QueryHandlers
                 Content = x.Content,
                 UserId=x.UserId,
                 BookId=x.BookId,
-                MovieId=x.MovieId
+                MovieId=x.MovieId,
                 Date=x.Date,
 
             }).ToListAsync();
 
             return result;
         }
-  Comment
+    }
+}

@@ -8,4 +8,4 @@ namespace WebAPI.Application.CQRS.Commands
         public RemoveCommentCommand(int id)
         {
             Id = id;
-        }
+        } }}

@@ -14,12 +14,12 @@ namespace WebAPI.Application.CQRS.CommandHandlers
             _context = context;
         }
 
-        public async Task<Unit> Handle(RemoveCommentCommandHandler request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(RemoveCommentCommand request, CancellationToken cancellationToken)
         {
-            var removedComment = await _context.Comment.SingleOrDefaultAsync(x => x.Id == request.Id);
+            var removedComment = await _context.Comments.SingleOrDefaultAsync(x => x.Id == request.Id);
             if(removedComment != null)
             {
-                _context.Comment.Remove(removedComment);
+                _context.Comments.Remove(removedComment);
                 await _context.SaveChangesAsync();
 
             }

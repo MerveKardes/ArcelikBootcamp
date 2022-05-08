@@ -16,16 +16,13 @@ namespace WebAPI.Application.CQRS.CommandHandlers
 
         public async Task<Unit> Handle(UpdateCommentCommand request, CancellationToken cancellationToken)
         {
-            var updatedComment = await _context.Comment.SingleOrDefaultAsync(x => x.Id == request.Id);
+            var updatedComment = await _context.Comments.SingleOrDefaultAsync(x => x.Id == request.Id);
             if (updatedComment != null)
             {
                 updatedComment.Content=request.Content;
                 updatedComment.UserId=request.UserId;
                 updatedComment.BookId=request.BookId;
                 updatedComment.MovieId=request.MovieId;
-                updatedComment.User=request.User;
-                updatedComment.Book=request.Book;
-                updatedComment.Movie=request.Movie;
                 updatedComment.Date=request.Date;
 
                 await _context.SaveChangesAsync();

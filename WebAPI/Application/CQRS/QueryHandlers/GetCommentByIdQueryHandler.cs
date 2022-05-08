@@ -23,7 +23,7 @@ namespace WebAPI.Application.CQRS.QueryHandlers
                 Content = x.Content,
                 UserId=x.UserId,
                 BookId=x.BookId,
-                MovieId=x.MovieId  
+                MovieId=x.MovieId,  
                 Date=x.Date,
 
             }).SingleOrDefaultAsync(x => x.Id == request.Id);

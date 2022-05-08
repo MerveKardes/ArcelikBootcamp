@@ -14,19 +14,16 @@ namespace WebAPI.Application.CQRS.CommandHandlers
             _context = context;
         }
 
-        public async Task<Unit> Handle(CreateCommentCommandHandler request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateCommentCommand request, CancellationToken cancellationToken)
         {
-            var CreateComment=new Comment();
-            CreateComment.Content=request.Content;
-            CreateComment.UserId=request.UserId;
-            CreateComment.BookId=request.BookId;
-            CreateComment.MovieId=request.MovieId;
-            CreateComment.User=request.User;
-            CreateComment.Book=request.Book;
-            CreateComment.Movie=request.Movie;
-            CreateComment.Date=request.Date;
+            var createdComment=new Comment();
+            createdComment.Content=request.Content;
+            createdComment.UserId=request.UserId;
+            createdComment.BookId=request.BookId;
+            createdComment.MovieId=request.MovieId;
+            createdComment.Date=request.Date;
 
-            await _context.Comment.AddAsync(CreateComment);
+            await _context.Comments.AddAsync(createdComment);
             await _context.SaveChangesAsync();
 
             return Unit.Value;

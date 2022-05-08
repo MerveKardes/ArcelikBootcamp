@@ -3,7 +3,7 @@ using WebAPI.Application.Dtos;
 
 namespace WebAPI.Application.CQRS.Queries
 {
-    public class GetMovieByIdQuery:IRequest<CommentDto?>
+    public class GetCommentByIdQuery:IRequest<CommentDto?>
     {
         public int Id { get; set; }
 
