@@ -16,15 +16,19 @@ namespace WebAPI.Application.CQRS.QueryHandlers
         }
         public async Task<List<ReceiverMessageDto>> Handle(GetReceiverMessageListQuery request, CancellationToken cancellationToken)
         {
-            var result = await _context.ReceiverMessages.AsNoTracking().Select(x => new ReceiverMessageDto
-            {
-                Id = x.Id,
-                Content = x.Content,
-                UserId = x.UserId,
+            var result2 = await _context.ReceiverMessages.Join(_context.Users,message => message.UserId,user=> user.Id,(message,user) => new {user,message})
+                .Select(x=> new ReceiverMessageDto { Id = x.message.Id, UserId = x.message.UserId, Content= x.message.Content, Username= x.user.Username}).ToListAsync();
+            /*
+        var result = await _context.ReceiverMessages.AsNoTracking().Select(x => new ReceiverMessageDto
+        {
+            Id = x.Id,
+            Content = x.Content,
+            UserId = x.UserId,
 
-            }).ToListAsync();
 
-            return result;
+        }).ToListAsync();
+            */
+            return result2;
         }
     }
 }
