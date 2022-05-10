@@ -21,6 +21,7 @@ namespace WebAPI.Application.CQRS.CommandHandlers
             {
                 updatedBook.Name = request.Name;
                 updatedBook.Writer = request.Writer;
+                updatedBook.ImageUrl = request.ImageUrl;
                 updatedBook.Point = request.Point;
                 updatedBook.IsFavorite = request.IsFavorite;
 

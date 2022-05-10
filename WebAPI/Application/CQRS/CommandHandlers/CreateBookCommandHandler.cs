@@ -19,6 +19,7 @@ namespace WebAPI.Application.CQRS.CommandHandlers
             var createdBook = new Book();
             createdBook.Name = request.Name;
             createdBook.Writer = request.Writer;
+            createdBook.ImageUrl = request.ImageUrl;
             createdBook.Point = request.Point;
             createdBook.IsFavorite = request.IsFavorite;
 

@@ -20,6 +20,7 @@ namespace WebAPI.Application.CQRS.QueryHandlers
             {
                 Id = x.Id,
                 Name = x.Name,
+                ImageUrl = x.ImageUrl,
                 Writer = x.Writer,
                 Point = x.Point,
 
