@@ -10,7 +10,7 @@
         public Book? Book { get; set; }
         public int MovieId { get; set; }
         public Movie? Movie { get; set; }
-        public DateTime Date {get; set; }
+        public string? Date {get; set; }
 
 
     }

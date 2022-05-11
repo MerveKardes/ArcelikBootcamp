@@ -11,5 +11,5 @@ namespace WebAPI.Application.CQRS.Commands
         public int BookId { get; set; }
 
         public int MovieId { get; set; }
-        public DateTime Date {get; set; } }}
+        public string? Date {get; set; } }}
         
